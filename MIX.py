@@ -1,4 +1,9 @@
 import math
+import os
+import subprocess
+import sys
+import warnings
+from tabulate import tabulate
 
 def converter(INPUT):
 	SUM = 0
@@ -54,7 +59,13 @@ def friction():
 		print("try again")
 	except SyntaxError:
 		print("Syntax error (program fault)")
-	
+
+def momentum(): #working on it
+	try:
+		print("ok")
+	except:
+		print('not don')
+
 def notequal():
 	if SUM != -1:
 		print(SUM)
@@ -66,9 +77,51 @@ def Fun():
 		print("try again")
 	except SyntaxError:
 		print("Error system quitting")
+
+def Geometric(): #working on it
+	print("How many rows and columns? ")
+	PTABLE=prettytable()
+	ROW=input("ROW(S): ")
+	COL=input("COLUMN(S): ")
+	TABLE=[]
+	for d in COL:
+		PTABLE.add_column(columns[0], i+1)
+		for i in ROW:
+			a=int(input())
+			PTABLE.add_row(columns[d+1], a)
+		
 	
+def Statistic(): #working on it
+	a = input("ok")
+	
+
+def open_terminal():
+	if sys.platform == 'win32':
+		subprocess.Popen('start', shell=True)
+		warnings.filterwarnings("ignore")
+	elif sys.platform == 'Darwin':
+		subprocess.Popen('open -a Terminal .', shell=True)
+		warnings.filterwarnings("ignore")
+	else:
+		try:
+			a=input("kitty or gnome: ").upper()
+			if a in ("KITTY", "1"):
+				My_Cmmnd="cmatrix"
+				#subprocess.Popen('kitty', shell=True)
+				os.system("kitty -e "+My_Cmmnd)
+				warnings.filterwarnings("ignore")
+			elif a in ("GNOME", "2"):
+				My_Cmmnd="cmatrix"			
+				#subprocess.Popen('gnome-terminal', shell=True)
+				os.system("gnome-terminal -e 'bash -c \"" + My_Cmmnd + ";bash\"'")
+				warnings.filterwarnings("ignore")
+		except:
+			print("Unsupported platform")
+			sys.exit(1)
+
 while True:		
 	try:
+		os.system('clear')
 		b = input("Computer Science, Physics or Math: ").upper()
 		if b in ("COMPUTER SCIENCE", "CP","1","COMPUTER"):
 			a = input("binary or denary: ").upper()
@@ -94,6 +147,10 @@ while True:
 				print("Function required, not done yet")
 				exit()
 				Statistic()
+		elif b in ("FUN"): #easter egg
+			open_terminal()
+		elif b in ("CLEAR", "CLR"):
+			os.system('clear')
 		else:
 			print("try again")
 	except ValueError or TypeError:
@@ -101,4 +158,5 @@ while True:
 		
 	except KeyboardInterrupt:
 		print("ancelled")
+		os.system('clear')
 		break
