@@ -59,17 +59,17 @@ def notequal():
 	if SUM != -1:
 		print(SUM)
 
-#def Fun():
-#	try:
-#		
-#	except ValueError or TypeError:
-#		print("try again")
-#	except SyntaxError:
-#		print("Error system quitting")
+def Fun():
+	try:
+		print("nothing is selected")		
+	except ValueError or TypeError:
+		print("try again")
+	except SyntaxError:
+		print("Error system quitting")
 	
 while True:		
 	try:
-		b = input("Computer Science or Physics: ").upper()
+		b = input("Computer Science, Physics or Math: ").upper()
 		if b in ("COMPUTER SCIENCE", "CP","1","COMPUTER"):
 			a = input("binary or denary: ").upper()
 			if a == "BINARY" or a == "1":	
@@ -84,6 +84,16 @@ while True:
 			a = input("FRICTION or idk: ").upper()
 			if a == "FRICTION" or a == "1": 
 				friction()
+		elif b in ("MATH", "3", "M"):
+			a = input("Calculate Geometric seq and series or Statistic: ").upper()
+			if a == "1" or a == "GEOMETRIC" or a == "G" or a=="GEOMETRIC SEQ":
+				print("Function required, not done yet")
+				exit()
+				Geometric()
+			elif a=="2" or a=="STATISTIC" or a =="S":
+				print("Function required, not done yet")
+				exit()
+				Statistic()
 		else:
 			print("try again")
 	except ValueError or TypeError:
@@ -92,24 +102,3 @@ while True:
 	except KeyboardInterrupt:
 		print("ancelled")
 		break
-def converter(INPUT):
-	SUM = 0
-	for i in range(len(INPUT)):
-		DIGIT = int(INPUT[i])
-		if DIGIT not in (0, 1):
-			print("Not a binary digit")
-			return -1
-		else:
-			SUM = SUM * 2 + DIGIT
-	return SUM
-
-while True:
-    try:
-    	INPUT = input("Input a binary number: ")
-    	SUM = converter(INPUT)
-
-    	if SUM != -1:
-    		print(SUM)
-    		
-    except ValueError:
-    	print("Try again.")
