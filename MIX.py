@@ -21,7 +21,7 @@ def d2bconverter(INPUT):
 	if INPUT//2==0:
 		return 0
 	else:
-		pretin(INPUT%2)
+		print(INPUT%2)
 		d2bconverter(INPUT/2)
 
 def friction():
