@@ -9,7 +9,7 @@ def converter(INPUT):
 	SUM = 0
 	for i in range(len(INPUT)):
 		DIGIT = int(INPUT[i])
-		if DIGIT not in (0, 1):
+		if DIGIT in (0, 1):
 			print("Not a binary digit")
 			return -1
 		else:
@@ -21,7 +21,7 @@ def d2bconverter(INPUT):
 	COUNTER = 0
 	for i in range(len(INPUT)):
 		DIGIT = int(INPUT[i])
-		if DIGIT not in (0, 1):
+		if DIGIT in (0, 1):
 			print("Not a binary digit")
 			return -1
 		else:
@@ -121,7 +121,7 @@ def open_terminal():
 
 while True:		
 	try:
-		os.system('clear')
+		#os.system('clear')
 		b = input("Computer Science, Physics or Math: ").upper()
 		if b in ("COMPUTER SCIENCE", "CP","1","COMPUTER"):
 			a = input("binary or denary: ").upper()
