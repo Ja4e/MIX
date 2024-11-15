@@ -17,11 +17,12 @@ def converter(INPUT):
 	return SUM
 
 def d2bconverter(INPUT):
-	if INPUT/2=0:
+	INPUT = int(INPUT)
+	if INPUT//2=0:
 		return
 	else:
 		print(INPUT%2)
-		INPUT(INPUT/2)
+		d2bconverter(INPUT/2)
 
 def friction():
 	try:
