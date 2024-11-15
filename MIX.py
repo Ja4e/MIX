@@ -18,7 +18,7 @@ def converter(INPUT):
 
 def d2bconverter(INPUT):
 	INPUT = int(INPUT)
-	if INPUT//2=0:
+	if INPUT//2==0:
 		return
 	else:
 		print(INPUT%2)
