@@ -17,19 +17,11 @@ def converter(INPUT):
 	return SUM
 
 def d2bconverter(INPUT):
-	SUM = 0
-	COUNTER = 0
-	for i in range(len(INPUT)):
-		DIGIT = int(INPUT[i])
-		if DIGIT in (0, 1):
-			print("Not a binary digit")
-			return -1
-		else:
-			SUM = SUM + DIGIT
-			COUNTER += 1
-	SUM = COUNTER + SUM
-	SUM = SUM / 2
-	return SUM
+	if INPUT/2=0:
+		return
+	else:
+		print(INPUT%2)
+		INPUT(INPUT/2)
 
 def friction():
 	try:
