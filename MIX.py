@@ -18,11 +18,11 @@ def converter(INPUT):
 
 def d2bconverter(INPUT):
 	INPUT = int(INPUT)
-	if INPUT//2==0:
-		return 0
+	if INPUT == 0:
+		return "0"
 	else:
 		print(INPUT%2)
-		d2bconverter(INPUT/2)
+		d2bconverter(INPUT//2)
 
 def friction():
 	try:
